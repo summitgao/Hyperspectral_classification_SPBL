@@ -12,16 +12,15 @@ data0 = data./max(data(:)); % normalization
 
 % band selection
 X = reshape(data0, m*n, d);
-Psi = PCA_Train(X',3); % ½µÎ¬
+Psi = PCA_Train(X',3);
 X = X*Psi;
 data0 = reshape(X, m, n, size(Psi,2));
 
 % LBP feature extraction
 fprintf(' ... ... LBP feature extraction begin ... ...\n');
-%£¨°ë¾¶£¬Î¬¶È/²ÉÑùµãÊı£©=£¨r£¬nr£© 
 r = 1;  nr = 8;
 mapping = getmapping(nr,'u2'); 
-% LBP¿é´óĞ¡(2*W0+1 x 2*W0+1)
+% LBPå—å¤§å°(2*W0+1 x 2*W0+1)
 feat = LBP_feature_global(data0, r, nr, mapping, 10, gth);
 fprintf(' !!!!!!! LBP feature extraction finished !!!!!!\n');
 
@@ -42,7 +41,6 @@ for i = 1: no_class
 end
 no_class = length(Labels);
 
-% ÕâÒ»ĞĞ·Ç³£ÖØÒª£¬Ö¸¶¨ÁËÓÃÓÚÑµÁ·Ñù±¾µÄÊıÁ¿
 CTrain = [1000 1368 5269 1140];
 
 DataTrn = [];
@@ -99,25 +97,4 @@ Score = Htest * W;
 accu = 1-sum(predy~=LabTst)/nSmptest;
 
 fprintf('   ... ... Testing accuracy is %f ... ...\n', accu);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
