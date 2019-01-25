@@ -4,7 +4,7 @@ Dong Wang, Feng Gao, Junyu Dong, Shengke Wang
 
 Sea ice classification from hyperspectral images based on self-paced boost learning
 
-submitted to IGARSS 2018
+IGARSS 2018
 
 The demo has not been well organized.
 
